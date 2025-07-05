@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: catalogue
+          uri: lb://CATALOGUE
+          predicates:
+            - Path=/api/accountCatalogue/**
+            
+        - id: enterprises
+          uri: lb://ENTERPRISES
+          predicates:
+            - Path=/api/enterprises/**
+
+        - id: factures
+          uri: lb://FACTURES
+          predicates:
+            - Path=/api/factures/**
+          
+        - id: products
+          uri: lb://PRODUCTS
+          predicates:
+            - Path=/api/products/**,/api/product-types/**,/api/categories/**,/api/unit-measures/**
+
+        - id: thirds
+          uri: lb://THIRDS
+          predicates:
+            - Path=/api/thirds/**
+
+        - id: keycloak
+          uri: lb://KEYCLOAK
+          predicates:
+            - Path=//keycloak/**
+        
+        - id: stock
+          uri: lb://STOCK
+          predicates:
+            - Path=/api/stock/**
+            
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: "${spring.application.name}:${random.uuid}"
