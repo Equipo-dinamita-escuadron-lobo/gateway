@@ -38,6 +38,11 @@ spring:
           uri: lb://STOCK
           predicates:
             - Path=/api/stock/**
+
+        - id: kardex
+          uri: lb://KARDEX
+          predicates:
+          - Path=/api/kardex/**
             
 server:
   port: 8080
