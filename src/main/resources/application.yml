@@ -53,3 +53,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     instance-id: "${spring.application.name}:${random.uuid}"
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
