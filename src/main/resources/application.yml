@@ -32,7 +32,7 @@ spring:
         - id: keycloak
           uri: lb://KEYCLOAK
           predicates:
-            - Path=/keycloak/**
+            - Path=/api/keycloak/**
         
         - id: stock
           uri: lb://STOCK
