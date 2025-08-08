@@ -43,6 +43,11 @@ spring:
           uri: lb://KARDEX
           predicates:
           - Path=/api/kardex/**
+
+        - id: config
+          uri: lb://CONFIG
+          predicates:
+          - Path=/api/config/**
             
 server:
   port: 8080
