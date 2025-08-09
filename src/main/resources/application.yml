@@ -48,7 +48,17 @@ spring:
           uri: lb://CONFIG
           predicates:
           - Path=/api/config/**
-            
+
+        - id: receivableswriteoff
+          uri: lb://RECEIVABLESWRITEOFF
+          predicates:
+          - Path=/api/receivableswriteoff/**
+
+        - id: payments
+          uri: lb://PAYMENTS
+          predicates:
+          - Path=/api/payments/**
+
 server:
   port: 8080
 
