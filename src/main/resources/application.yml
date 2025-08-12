@@ -32,7 +32,7 @@ spring:
         - id: keycloak
           uri: lb://KEYCLOAK
           predicates:
-            - Path=/keycloak/**
+            - Path=/api/keycloak/**
         
         - id: stock
           uri: lb://STOCK
@@ -43,7 +43,22 @@ spring:
           uri: lb://KARDEX
           predicates:
           - Path=/api/kardex/**
-            
+
+        - id: config
+          uri: lb://CONFIG
+          predicates:
+          - Path=/api/config/**
+
+        - id: receivableswriteoff
+          uri: lb://RECEIVABLESWRITEOFF
+          predicates:
+          - Path=/api/receivableswriteoff/**
+
+        - id: payments
+          uri: lb://PAYMENTS
+          predicates:
+          - Path=/api/payments/**
+
 server:
   port: 8080
 
