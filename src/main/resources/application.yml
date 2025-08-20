@@ -59,6 +59,12 @@ spring:
           predicates:
           - Path=/api/payments/**
 
+          
+        - id: auxiliary-book
+          uri: lb://AUXILIARY-BOOK
+          predicates:
+            - Path=/api/auxiliary-books/**
+            
 server:
   port: 8080
 
