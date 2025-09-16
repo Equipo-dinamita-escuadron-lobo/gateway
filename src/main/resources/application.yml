@@ -8,7 +8,7 @@ spring:
           uri: lb://CATALOGUE
           predicates:
             - Path=/api/accountCatalogue/**, /api/tax/**
-            
+
         - id: enterprises
           uri: lb://ENTERPRISES
           predicates:
@@ -18,7 +18,7 @@ spring:
           uri: lb://FACTURES
           predicates:
             - Path=/api/factures/**
-          
+
         - id: products
           uri: lb://PRODUCTS
           predicates:
@@ -33,7 +33,7 @@ spring:
           uri: lb://KEYCLOAK
           predicates:
             - Path=/api/keycloak/**
-        
+
         - id: stock
           uri: lb://STOCK
           predicates:
@@ -59,12 +59,17 @@ spring:
           predicates:
           - Path=/api/payments/**
 
-          
+
         - id: auxiliary-book
           uri: lb://AUXILIARY-BOOK
           predicates:
             - Path=/api/auxiliary-books/**
-            
+
+        - id: treasury
+          uri: lb://TREASURY
+          predicates:
+            - Path=/api/treasury/**
+
 server:
   port: 8080
 
