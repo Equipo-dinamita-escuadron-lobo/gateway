@@ -18,6 +18,7 @@ public class CorsConfig {
 
         corsConfig.addAllowedMethod("*");
         corsConfig.addAllowedHeader("*");
+        corsConfig.addExposedHeader("Content-Disposition");
 
         corsConfig.setAllowCredentials(true);
         corsConfig.setMaxAge(3600L);
