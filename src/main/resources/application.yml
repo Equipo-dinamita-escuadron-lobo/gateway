@@ -5,7 +5,7 @@ spring:
   servlet:
     multipart:
       max-file-size: 5MB
-      max-request-size: 10MB
+      max-request-size: 8MB
       enabled: true
       file-size-threshold: 2KB
       resolve-lazily: false
