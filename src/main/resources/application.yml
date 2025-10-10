@@ -1,8 +1,20 @@
 spring:
   application:
     name: gateway
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+      enabled: true
+      file-size-threshold: 2KB
+      resolve-lazily: false
+
   cloud:
     gateway:
+      httpclient:
+        response-timeout: 60s
+        connect-timeout: 5000
       routes:
         - id: catalogue
           uri: lb://CATALOGUE
