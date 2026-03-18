@@ -92,7 +92,7 @@ spring:
           predicates:
             - Path=/api/audit/**
         
-        - id: finacial-statement
+        - id: financial-statement
           uri: lb://FINANCIAL-STATEMENT
           predicates:
           - Path=/api/financial-statements/**
