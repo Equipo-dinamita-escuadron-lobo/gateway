@@ -91,6 +91,11 @@ spring:
           uri: lb://AUDIT
           predicates:
             - Path=/api/audit/**
+        
+        - id: finacial-statement
+          uri: lb://FINANCIAL-STATEMENT
+          predicates:
+          - Path=/api/financial-statements/**
 
 server:
   port: 8080
